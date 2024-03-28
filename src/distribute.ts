@@ -54,7 +54,9 @@ function distributeDecimal(value: Numeric, shares: (Numeric | number)[], options
  * @param shares is shares (weights) to distribute.
  * @param scale if specified, all results are rounded up to the given number of decimal places.
  * @returns distributed results.
+ *
  * @example
+ * const result = distribute(200, [45, 55]); // [90, 110]
  */
 export function distribute(value: number, shares: number[], options?: Options): number[];
 /**
@@ -65,6 +67,10 @@ export function distribute(value: number, shares: number[], options?: Options): 
  * @param shares is shares (weights) to distribute.
  * @param scale if specified, all results are rounded up to the given number of decimal places.
  * @returns distributed results.
+ *
+ * @example
+ * const resultB = distribute(BigNumber(200), [45, 55]); // [BigNumber(90), BigNumber(110)]
+ * const resultD = distribute(new Decimal(200), [45, 55]); // [new Decimal(90), new Decimal(110)]
  */
 export function distribute(value: Numeric, shares: (Numeric | number)[], options?: Options): Numeric[];
 export function distribute<T extends Numeric | number>(value: T, shares: (Numeric | number)[], options: Options = {}): T[] {
