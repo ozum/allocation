@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["bignumber.js", "jest"]
+  },
+  "extends": "./config/tsm/tsconfig.json",
+  "include": ["src/**/*", "test/**/*"],
+  "ts-node": { "swc": true, "esm": true }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "allocation",
+  "version": "0.0.0",
+  "description": "Distributes the given total number in desired weights.",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "exports": "./dist",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "swpm": "pnpm",
+  "scripts": {
+    "verify": "swpm run base:verify",
+    "release": "swpm run base:release",
+    "test": "swpm run base:test",
+    "dev": "swpm run base:dev",
+    "lint": "swpm run base:lint",
+    "format": "swpm run base:format",
+    "build": "swpm run base:build",
+    "docs:api": "swpm run base:docs:api",
+    "commit": "swpm run base:commit",
+    "commitlint": "swpm run base:commitlint",
+    "precommit": "swpm run base:precommit",
+    "prepare": "swpm run base:prepare",
+    "base:verify": "concurrently -g -c auto -n '    Audit   ,Dependencies,    Lint    ,   Format   ,    Test    ' 'audit-ci -c' 'knip' 'swpm run lint' 'swpm run format' 'swpm test'",
+    "base:release": "swpm run docs:api && git pull && git add -A && git commit && git push --follow-tags",
+    "base:test": "jest --coverage",
+    "base:dev": "tsc --project tsconfig.build.json --watch",
+    "base:lint": "eslint --ignore-path .gitignore --cache --max-warnings 0 --fix .",
+    "base:format": "prettier . --list-different --write --ignore-path .gitignore",
+    "base:build": "tsc --project tsconfig.build.json",
+    "base:docs:api": "typedoc",
+    "base:commit": "git-cz --hook",
+    "base:commitlint": "commitlint --edit ${1}",
+    "base:precommit": "lint-staged && concurrently -g -c auto -n '    Audit   ,Dependencies' 'audit-ci -c' 'knip'",
+    "base:prepare": "is-ci || husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozum/allocation"
+  },
+  "bugs": {
+    "url": "https://github.com/ozum/allocation/issues"
+  },
+  "homepage": "https://github.com/ozum/allocation",
+  "keywords": [
+    "distribute allocate percent weighted share"
+  ],
+  "author": {
+    "name": "Özüm Eldoğan",
+    "email": "ozum@ozum.net",
+    "url": "https://github.com/ozum"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
+    "@swc/core": "1.4.8",
+    "@swc/jest": "0.2.36",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.30",
+    "audit-ci": "6.6.1",
+    "bignumber.js": "^9.1.2",
+    "commitizen": "4.3.0",
+    "concurrently": "8.2.2",
+    "cz-conventional-changelog": "3.3.0",
+    "decimal.js": "^10.4.3",
+    "eslint": "8.57.0",
+    "eslint-config-ozum": "1.0.8",
+    "husky": "9.0.11",
+    "is-ci": "3.0.1",
+    "jest": "29.7.0",
+    "knip": "5.1.6",
+    "lint-staged": "15.2.2",
+    "prettier": "3.0.0",
+    "swpm": "2.6.0",
+    "typedoc": "0.25.12",
+    "typedoc-plugin-markdown": "3.17.1",
+    "typescript": "5.4.3"
+  }
+}
