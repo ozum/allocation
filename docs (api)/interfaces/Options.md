@@ -16,6 +16,8 @@ Options
 
 • `Optional` **scale**: `number`
 
+Number of digits after decimal point to round the results.
+
 #### Defined in
 
-distribute.ts:9
+[distribute.ts:10](https://github.com/ozum/allocation/blob/1462496/src/distribute.ts#L10)

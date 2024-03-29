@@ -6,6 +6,7 @@ export type Numeric = BigNumber | Decimal;
 
 /** Options */
 export interface Options {
+  /** Number of digits after decimal point to round the results. */
   scale?: number | undefined;
 }
 

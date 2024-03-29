@@ -26,7 +26,7 @@ Object types supported by this library.
 
 #### Defined in
 
-distribute.ts:5
+[distribute.ts:5](https://github.com/ozum/allocation/blob/1462496/src/distribute.ts#L5)
 
 ## Functions
 
@@ -39,11 +39,11 @@ When the sum of the shares equals 100, it functions akin to percentages.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `number` | is the total value to distribute. |
-| `shares` | `number`[] | is shares (weights) to distribute. |
-| `options?` | [`Options`](interfaces/Options.md) | - |
+| Name       | Type                               | Description                        |
+| :--------- | :--------------------------------- | :--------------------------------- |
+| `value`    | `number`                           | is the total value to distribute.  |
+| `shares`   | `number`[]                         | is shares (weights) to distribute. |
+| `options?` | [`Options`](interfaces/Options.md) | -                                  |
 
 #### Returns
 
@@ -59,7 +59,7 @@ const result = distribute(200, [45, 55]); // [90, 110]
 
 #### Defined in
 
-distribute.ts:61
+[distribute.ts:62](https://github.com/ozum/allocation/blob/1462496/src/distribute.ts#L62)
 
 ▸ **distribute**(`value`, `shares`, `options?`): [`Numeric`](README.md#numeric)[]
 
@@ -68,11 +68,11 @@ When the sum of the shares equals 100, it functions akin to percentages.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | [`Numeric`](README.md#numeric) | is the total value to distribute. |
-| `shares` | (`number` \| [`Numeric`](README.md#numeric))[] | is shares (weights) to distribute. |
-| `options?` | [`Options`](interfaces/Options.md) | - |
+| Name       | Type                                           | Description                        |
+| :--------- | :--------------------------------------------- | :--------------------------------- |
+| `value`    | [`Numeric`](README.md#numeric)                 | is the total value to distribute.  |
+| `shares`   | (`number` \| [`Numeric`](README.md#numeric))[] | is shares (weights) to distribute. |
+| `options?` | [`Options`](interfaces/Options.md)             | -                                  |
 
 #### Returns
 
@@ -89,4 +89,4 @@ const resultD = distribute(new Decimal(200), [45, 55]); // [new Decimal(90), new
 
 #### Defined in
 
-distribute.ts:75
+[distribute.ts:76](https://github.com/ozum/allocation/blob/1462496/src/distribute.ts#L76)
